@@ -10,3 +10,34 @@ $(function () {
     });
 });
 
+
+$(function() {
+    $('.svgAni').find('path').each(function(i, path) {
+        var length = path.getTotalLength();
+        //alert(length) //1564.734130859375
+    })
+})
+
+$(function() {
+    $('.animate').scrolla({
+        mobile: true, //모바일 버전 활성화
+        once: true //스크롤시 딱 한번만 하고 싶을 때
+    });
+})
+
+
+$(window).on('scroll resize', function(){
+    var scrollTop = $(document).scrollTop();
+    bgColor();
+    function bgColor() {
+        if(scrollTop > 1400) {
+            $('body').addClass('on');
+        }else {
+            $('body').removeClass('on');
+        }
+        if(scrollTop > 2700) {
+            $('body').removeClass('on');
+        }
+    }
+})
+
